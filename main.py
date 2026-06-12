@@ -1,4 +1,5 @@
-import csv
+#csv
+"""import csv
 
 with open("paises.csv", "w", newline="", encoding="utf-8") as archivo:
     escritor = csv.writer(archivo)
@@ -8,4 +9,11 @@ with open("paises.csv", "w", newline="", encoding="utf-8") as archivo:
     escritor.writerow(["Brasil", 213993437, 8515767, "América"])
     escritor.writerow(["Alemania", 83149300, 357022, "Europa"])
 
-print("CSV creado")
+print("CSV creado")"""
+
+#Prueba de carga de paises
+from funciones import cargar_paises
+
+paises =  cargar_paises()
+
+print(paises)
