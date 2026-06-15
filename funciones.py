@@ -162,7 +162,7 @@ def agregar_pais(paises):
         "poblacion": poblacion,
         "superficie": superficie,
         "continente": continente
-    }
+    } 
 
     paises.append(pais)
 
@@ -369,7 +369,7 @@ def menor_poblacion(paises):
 
     print(
     f"Pais con menor poblacion: {pais['nombre']} "
-    f"({pais['poblacion']} habitantes)"
+    f"({pais['poblacion']} habitantes)" 
 )
 
 def promedio_poblacion(paises):
