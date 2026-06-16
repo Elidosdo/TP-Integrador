@@ -1,7 +1,8 @@
 import csv
 import os
-#Cargar paises
-def cargar_paises():
+def cargar_paises(): # Creamos funcion que carga la lista de países desde el archivo 'paises.csv' ubicado en el mismo directorio que este módulo.
+                     # Returns:
+                     #         list[dict]: Lista de diccionarios con las claves 'nombre', 'poblacion', 'superficie' y 'continente'. Retorna una lista vacía si el archivo no existe. 
 
     paises = []
 
@@ -33,8 +34,9 @@ def cargar_paises():
 
     return paises
 
-#Guardar Paises
-def guardar_paises(paises):
+def guardar_paises(paises): # Creamos funcion que guarda la lista de países en el archivo 'paises.csv', sobreescribiendo su contenido anterior.
+                            # Args:
+                            #      paises (list[dict]): Lista de diccionarios con las claves 'nombre', 'poblacion', 'superficie' y 'continente'.
 
     ruta_csv = os.path.join(
         os.path.dirname(__file__),
@@ -64,8 +66,15 @@ def guardar_paises(paises):
 
         escritor.writerows(paises)
 
-#Agregar paises
-def agregar_pais(paises):
+def agregar_pais(paises): # Creamos funcion que solicita al usuario los datos de un nuevo país mediante inputs interactivos, valida cada campo y lo agrega a la lista. Luego persiste los cambios en el archivo CSV.
+                          # Validaciones aplicadas:
+                          #                       - Nombre: no vacío, mínimo 2 caracteres, solo letras, no duplicado.
+                          #                       - Población: entero mayor que cero.
+                          #                       - Superficie: entero mayor que cero.
+                          #                       - Continente: no vacío, solo letras.
+                          # Args:
+                          #      paises (list[dict]): Lista actual de países sobre la que se opera.
+ 
 
     while True:
 
@@ -170,8 +179,10 @@ def agregar_pais(paises):
 
     print(f"Pais '{nombre}' agregado correctamente.")
 
-#Actualizar paises
-def actualizar_pais(paises):
+def actualizar_pais(paises): # Creamos funcion que solicita el nombre de un país existente y permite actualizar su población y superficie. Si el país no existe, informa al usuario. Los cambios se persisten en el archivo CSV.
+ 
+                             # Args:
+                             #      paises (list[dict]): Lista actual de países sobre la que se opera.
 
     while True:
 
@@ -244,8 +255,9 @@ def actualizar_pais(paises):
 
     print("Pais no encontrado.")
 
-#Buscar paises
-def buscar_pais(paises):
+def buscar_pais(paises): # Creamos funcion que solicita un texto al usuario y busca países cuyo nombre contenga dicha cadena. Muestra todos los resultados encontrados o un mensaje si no hay coincidencias.
+                         # Args:
+                         #      paises (list[dict]): Lista actual de países sobre la que se opera.
 
     while True:
 
@@ -286,8 +298,9 @@ def buscar_pais(paises):
             f"Continente: {pais['continente']}"
             )
 
-#Filtrar continente
-def filtrar_continente(paises):
+def filtrar_continente(paises): # Creamos funcion que solicita el nombre de un continente y muestra todos los países que pertenecen a él. Si no hay coincidencias, informa al usuario.
+                                # Args:
+                                #      paises (list[dict]): Lista actual de países sobre la que se opera.
 
     while True:
 
@@ -320,8 +333,9 @@ def filtrar_continente(paises):
 
         print("No se encontraron paises en ese continente.")
 
-#Ordenar nombre
-def ordenar_nombre(paises):
+def ordenar_nombre(paises): # Creamos funcion que muestra la lista de países ordenada alfabéticamente por nombre. Si la lista está vacía, informa al usuario y no realiza ninguna acción.
+                            # Args:
+                            #      paises (list[dict]): Lista actual de países sobre la que se opera.
 
     if len(paises) == 0:
 
@@ -337,8 +351,9 @@ def ordenar_nombre(paises):
 
         print(pais)
 
-#Estadisticas
-def mayor_poblacion(paises):
+def mayor_poblacion(paises): # Creamos funcion que muestra el país con la mayor cantidad de habitantes dentro de la lista. Si la lista está vacía, informa al usuario y no realiza ninguna acción.
+                             # Args:
+                             #      paises (list[dict]): Lista actual de países sobre la que se opera.
 
     if len(paises) == 0:
 
@@ -355,7 +370,9 @@ def mayor_poblacion(paises):
         f"({pais['poblacion']} habitantes)"
     )
 
-def menor_poblacion(paises):
+def menor_poblacion(paises): # Creamos funcion que muestra el país con la menor cantidad de habitantes dentro de la lista. Si la lista está vacía, informa al usuario y no realiza ninguna acción.
+                             # Args:
+                             #      paises (list[dict]): Lista actual de países sobre la que se opera.
     
     if len(paises) == 0:
 
@@ -372,7 +389,10 @@ def menor_poblacion(paises):
     f"({pais['poblacion']} habitantes)" 
 )
 
-def promedio_poblacion(paises):
+def promedio_poblacion(paises): # Creamos funcion que calcula y muestra el promedio de población entre todos los países de la lista. Si la lista está vacía, informa al usuario y no realiza ninguna acción.
+                                # Args:
+                                #     paises (list[dict]): Lista actual de países sobre la que se opera.
+ 
 
     if len(paises) == 0:
 
@@ -391,7 +411,9 @@ def promedio_poblacion(paises):
     f"Promedio de poblacion: {promedio:.2f}"
 )
 
-def cantidad_continentes(paises):
+def cantidad_continentes(paises): # Creamos funcion que cuenta y muestra cuántos países hay por cada continente presente en la lista. Si la lista está vacía, informa al usuario y no realiza ninguna acción.
+                                  # Args:
+                                  #     paises (list[dict]): Lista actual de países sobre la que se opera.
 
     if len(paises) == 0:
 
@@ -418,7 +440,9 @@ def cantidad_continentes(paises):
         f"{continente}: {cantidad} pais(es)"
         )
 
-def promedio_superficie(paises):
+def promedio_superficie(paises): # Creamos funcion que calcula y muestra el promedio de superficie (en km²) entre todos los países de la lista. Si la lista está vacía, informa al usuario y no realiza ninguna acción.
+                                 # Args:
+                                 #     paises (list[dict]): Lista actual de países sobre la que se opera.
 
     if len(paises) == 0:
 

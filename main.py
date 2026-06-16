@@ -1,4 +1,13 @@
-#Prueba de carga de paises
+# Carga los datos desde el archivo 'paises.csv' al iniciar y presenta un menú interactivo que permite al usuario realizar las siguientes operaciones:
+# 1. Agregar un nuevo país.
+# 2. Actualizar la población y superficie de un país existente.
+# 3. Buscar países por nombre (búsqueda parcial).
+# 4. Filtrar países por continente.
+# 5. Listar países ordenados alfabéticamente por nombre.
+# 6. Ver estadísticas (mayor/menor población, promedios, cantidad por continente).
+# 7. Salir del programa.
+
+# Se utilizan funciones del programa funciones.py que contienen toda la lógica del negocio y acceso a datos.
 from funciones import (
     cargar_paises,
     agregar_pais,
