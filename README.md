@@ -57,3 +57,6 @@
 # - Documentación del programa y del trabajo.
 # - Realización de pruebas y correccion de errores.
 
+# Enlace del video: https://drive.google.com/file/d/1ESTK1Yr35aYr4132Kjl-ZLRnM4qmgAvG/view?usp=drive_link
+# enlace a la documentación en PDF: https://docs.google.com/document/d/1zN4CQUVm4lI67vzu3glJ0AR7oDrHnF8w8yFOfqPIV3A/edit?tab=t.0
+
